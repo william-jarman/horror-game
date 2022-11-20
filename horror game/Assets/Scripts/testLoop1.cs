@@ -34,6 +34,20 @@ public class testLoop1 : MonoBehaviour
             {
                 loop = loop - 1;
             }
+            if(loop < 0)
+            {
+                loop = 0;
+            }
+            if (loop == 0)
+            {
+                testObj1.SetActive(true);
+                testObj2.SetActive(false);
+                testObj3.SetActive(false);
+                testObj4.SetActive(false);
+                testObj5.SetActive(false);
+                testObj6.SetActive(false);
+                testObj7.SetActive(false);
+            }
             if (loop == 1)
             {
                 testObj1.SetActive(false);
