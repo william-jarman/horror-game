@@ -8,7 +8,7 @@ public class LoopScript : MonoBehaviour
     float loop;
 
     //The objects.
-    public GameObject ObjGroup1, ObjGroup2, ObjGroup3;
+    public GameObject ObjGroup1, ObjGroup2, ObjGroup3, ObjGroup4;
 
     //The trigger's collider.
     public Collider triggerCollider;
