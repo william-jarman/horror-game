@@ -9,6 +9,11 @@ public class fnafCam : MonoBehaviour
     public int rotateSpeed, clampValue;
     public bool ADKeys, movingLeft, movingRight;
 
+    void Start()
+    {
+        Application.targetFrameRate = 30;
+    }
+
     void Update()
     {
         //If ADKeys is == true, you can rotate the camera left and right with the A and D keys. Leave false if you want to use regular FNAF camera style.
