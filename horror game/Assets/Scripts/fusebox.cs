@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class fusebox : MonoBehaviour
 {
     public Animator fuseboxAnim;
-    public GameObject mainLights, PCMonitor, intText, dialogueText;
+    public GameObject mainLights, intText, dialogueText;
     public bool interactable, toggle;
+    public Text dialogueTextt;
+    public string dialogueString;
     public float timeToTurnOn, dialogueTime;
 
     void OnTriggerStay(Collider other)
@@ -46,9 +49,10 @@ public class fusebox : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToTurnOn);
         mainLights.SetActive(true);
-        PCMonitor.SetActive(true);
+        //PCMonitor.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         dialogueText.SetActive(true);
+        dialogueTextt.text = dialogueString;
         yield return new WaitForSeconds(dialogueTime);
         dialogueText.SetActive(false);
     }
