@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class fusebox : MonoBehaviour
 {
     public Animator fuseboxAnim;
-    public GameObject mainLights, intText, dialogueText;
+    public GameObject mainLights, intText, dialogueText, box, monitorPrompt;
     public bool interactable, toggle;
     public Text dialogueTextt;
     public string dialogueString;
@@ -49,7 +49,8 @@ public class fusebox : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToTurnOn);
         mainLights.SetActive(true);
-        //PCMonitor.SetActive(true);
+        monitorPrompt.SetActive(false);
+        box.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         dialogueText.SetActive(true);
         dialogueTextt.text = dialogueString;
