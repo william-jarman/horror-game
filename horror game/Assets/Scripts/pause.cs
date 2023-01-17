@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
-    public GameObject pausemenu;
+    public GameObject pausemenu, settingsmenu;
     public bool toggle;
     public SC_FPSController playerscript;
+    public string sceneName;
 
     void Update()
     {
@@ -16,6 +18,7 @@ public class pause : MonoBehaviour
             if(toggle == false)
             {
                 pausemenu.SetActive(false);
+                settingsmenu.SetActive(false);
                 playerscript.enabled = true;
                 Time.timeScale = 1;
                 Cursor.visible = false;
@@ -32,5 +35,37 @@ public class pause : MonoBehaviour
                 AudioListener.pause = true;
             }
         }
+    }
+    public void openSettings()
+    {
+        pausemenu.SetActive(false);
+        settingsmenu.SetActive(true);
+    }
+    public void backToPauseMenu()
+    {
+        settingsmenu.SetActive(false);
+        pausemenu.SetActive(true);
+    }
+    public void resumeGame()
+    {
+        toggle = false;
+        pausemenu.SetActive(false);
+        playerscript.enabled = true;
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        AudioListener.pause = false;
+    }
+    public void quitToMainMenu()
+    {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(sceneName);
+    }
+    public void quitGame()
+    {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        Application.Quit();
     }
 }
