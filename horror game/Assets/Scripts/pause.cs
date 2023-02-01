@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
-    public GameObject pausemenu, settingsmenu;
+    public GameObject pausemenu, settingsmenu, visualsmenu, audiomenu;
     public bool toggle;
     public SC_FPSController playerscript;
     public string sceneName;
@@ -18,6 +18,8 @@ public class pause : MonoBehaviour
             if(toggle == false)
             {
                 pausemenu.SetActive(false);
+                visualsmenu.SetActive(false);
+                audiomenu.SetActive(false);
                 settingsmenu.SetActive(false);
                 playerscript.enabled = true;
                 Time.timeScale = 1;
@@ -39,12 +41,24 @@ public class pause : MonoBehaviour
     public void openSettings()
     {
         pausemenu.SetActive(false);
+        visualsmenu.SetActive(false);
+        audiomenu.SetActive(false);
         settingsmenu.SetActive(true);
     }
     public void backToPauseMenu()
     {
         settingsmenu.SetActive(false);
         pausemenu.SetActive(true);
+    }
+    public void toVisuals()
+    {
+        settingsmenu.SetActive(false);
+        visualsmenu.SetActive(true);
+    }
+    public void toAudio()
+    {
+        settingsmenu.SetActive(false);
+        audiomenu.SetActive(true);
     }
     public void resumeGame()
     {
