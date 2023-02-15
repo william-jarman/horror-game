@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class breakPlanks : MonoBehaviour
 {
-    public GameObject plankNormal, planksBroken;
+    public GameObject plankNormal, planksBroken, axe;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("axe"))
+        if (other.CompareTag("MainCamera"))
         {
-            planksBroken.SetActive(true);
-            plankNormal.SetActive(false);
+            if(axe.active == true)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    planksBroken.SetActive(true);
+                    plankNormal.SetActive(false);
+                }
+            }
         }
     }
 }
