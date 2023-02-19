@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class itemPickup : MonoBehaviour
 {
     //The GameObject variables
     public GameObject objectGround, objectHand, pickupText, intText;
 
+    //String variables
+    public string pickupString;
+
     //The Bools
-    public bool isItemInHand, isTherePickupText, interactable, toggle;
+    public bool isItemInHand, isTherePickupText, interactable, toggle, pickedup;
 
     //When player is looking at the item, interactable will equal to true.
     void OnTriggerStay(Collider other)
@@ -46,8 +50,10 @@ public class itemPickup : MonoBehaviour
                 //If isTherePickupText equals true, the pickup text will appear.
                 if (isTherePickupText == true)
                 {
+                    pickupText.gameObject.GetComponent<Text>().text = pickupString;
                     pickupText.SetActive(true);
                 }
+                pickedup = true;
                 intText.SetActive(false);
                 objectGround.SetActive(false);
                 interactable = false;

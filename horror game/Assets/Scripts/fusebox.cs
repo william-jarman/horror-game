@@ -11,6 +11,7 @@ public class fusebox : MonoBehaviour
     public Text dialogueTextt;
     public string dialogueString;
     public float timeToTurnOn, dialogueTime;
+    public itemPickup fuseToFind;
 
     void OnTriggerStay(Collider other)
     {
@@ -18,8 +19,11 @@ public class fusebox : MonoBehaviour
         {
             if(toggle == false)
             {
-                intText.SetActive(true);
-                interactable = true;
+                if (fuseToFind.pickedup == true)
+                {
+                    intText.SetActive(true);
+                    interactable = true;
+                }
             }
         }
     }
