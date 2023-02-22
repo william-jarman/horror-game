@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class glassBreaker : MonoBehaviour
 {
-    public Animator glassAnim, glassBreakerAnim;
+    //public Animator glassAnim, glassBreakerAnim;
     public GameObject intText, glassBreakerHand;
     public bool interactable, toggle;
     public float breakTime, afterBreakTime;
@@ -38,7 +38,7 @@ public class glassBreaker : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                glassBreakerAnim.SetTrigger("hit");
+                //glassBreakerAnim.SetTrigger("hit");
                 StartCoroutine(breakGlass());
                 intText.SetActive(false);
                 toggle = true;
@@ -49,7 +49,7 @@ public class glassBreaker : MonoBehaviour
     IEnumerator breakGlass()
     {
         yield return new WaitForSeconds(breakTime);
-        glassAnim.SetTrigger("break");
+        //glassAnim.SetTrigger("break");
         yield return new WaitForSeconds(afterBreakTime);
         glassBreakerHand.SetActive(false);
         axeScript.toggle = true;
