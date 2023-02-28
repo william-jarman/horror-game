@@ -5,7 +5,7 @@ using UnityEngine;
 public class deskBox : MonoBehaviour
 {
     public Animator boxAnim;
-    public GameObject intText, monitorPrompt;
+    public GameObject intText, monitorPrompt, fuse3;
     public bool interactable, toggle, locked;
     public itemPickup glassBreakerScript;
 
@@ -34,7 +34,7 @@ public class deskBox : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(locked == true)
+                if(locked == true && fuse3.active == true)
                 {
                     monitorPrompt.SetActive(true);
                 }
