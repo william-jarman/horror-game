@@ -19174,7 +19174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   safeDial: {fileID: 829853354}
-  correctSafeCode: 0
   safeAnimator: {fileID: 1203798431}
   player: {fileID: 1598415337}
   safeCamera: {fileID: 666720243}
@@ -19183,6 +19182,7 @@ MonoBehaviour:
   interactable: 0
   toggle: 1
   currentSafeCode: 
+  correctSafeCode: 6969
   safeCodeText: {fileID: 1412065834}
 --- !u!54 &873715227
 Rigidbody:
@@ -29484,7 +29484,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412065832}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -31.622}
+  m_LocalPosition: {x: 0, y: 0, z: -31.629}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 262762648}
@@ -29492,7 +29492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -337.18503, y: -238.003}
+  m_AnchoredPosition: {x: -561.19104, y: -304.01086}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412065834
