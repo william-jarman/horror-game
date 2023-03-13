@@ -13,6 +13,14 @@ public class newSafe : MonoBehaviour
     public bool usingSafe, interactable, toggle;
     public string currentSafeCode, correctSafeCode;
     public TextMeshProUGUI safeCodeText;
+    public int correctCodeInt;
+
+    void Start()
+    {
+        correctCodeInt = UnityEngine.Random.Range(0, 10000);
+        correctSafeCode = correctCodeInt.ToString("0000");
+        Debug.Log(correctSafeCode);
+    }
 
     void OnTriggerStay(Collider other)
     {
