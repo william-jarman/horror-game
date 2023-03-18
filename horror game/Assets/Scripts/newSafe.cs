@@ -12,7 +12,7 @@ public class newSafe : MonoBehaviour
     public GameObject player, safeCamera, intText;
     public bool usingSafe, interactable, toggle;
     public string currentSafeCode, correctSafeCode;
-    public TextMeshProUGUI safeCodeText;
+    public TextMeshPro safeCodeText;
     public int correctCodeInt;
 
     void Start()
@@ -119,6 +119,11 @@ public class newSafe : MonoBehaviour
                 currentSafeCode = currentSafeCode + "0";
             }
             safeCodeText.text = currentSafeCode;
+            if(currentSafeCode.Length > 4)
+            {
+                safeCodeText.text = "";
+                currentSafeCode = "";
+            }
             if (currentSafeCode.Contains(correctSafeCode))
             {
                 safeCamera.SetActive(false);
