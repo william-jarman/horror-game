@@ -5,6 +5,7 @@ using UnityEngine;
 public class breakPlanks : MonoBehaviour
 {
     public GameObject plankNormal, planksBroken, axe;
+    public Animator axeAnim;
     public bool interactable;
 
     void OnTriggerStay(Collider other)
@@ -31,6 +32,7 @@ public class breakPlanks : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 plankNormal.SetActive(false);
+                axeAnim.Play("prototype_axe_hit");
                 planksBroken.SetActive(true);
             }
         }
